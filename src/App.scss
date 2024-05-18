@@ -60,6 +60,9 @@ main {
     height: 45px;
     width: 100%;
     border-radius: 50px;
+    display: flex;
+    align-items: center;
+
   }
 
   input {
@@ -67,7 +70,7 @@ main {
 
     &[type="email"] {
       background: none;
-      width: calc(100% - 60px);
+      width: calc(100% - 20px - 60px);
       padding-inline: 24px;
 
       &::placeholder {
@@ -87,7 +90,18 @@ main {
       background: no-repeat center;
       color: rgba(#000000, 0);
       left: 3px;
+      cursor: pointer;
+
+      &:hover {
+        background: rgb(250, 200, 207) url('./assets/images/icon-arrow.svg') center no-repeat !important;
+      }
     }
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+
   }
 }
 
@@ -108,4 +122,30 @@ main {
   .mobile-img {
     display: none;
   }
+}
+
+.error {
+  border: 2px solid $soft-red !important;
+}
+
+.show-error-icon {
+  width: 20px;
+  margin-right: 10px;
+}
+
+.hide-error-icon {
+  width: 5px;
+  margin-right: 20px;
+  visibility: hidden;
+}
+
+.error-msg {
+  color: $soft-red;
+  font-size: .75rem;
+  align-self: flex-start;
+  margin: 10px 0 0 25px;
+}
+
+.error-msg-hide {
+  display: none;
 }
